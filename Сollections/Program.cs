@@ -43,7 +43,6 @@ namespace Сollections
                     Console.WriteLine(GetDescription(dictionary, playerInput, errorMessage));
                 }
             }
-
         }
 
         private static string GetDescription(Dictionary<string, string> dictionary, string word, string errorMessage)
