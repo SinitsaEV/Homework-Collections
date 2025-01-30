@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Courses\\Desktop\\Course\\C#_Junior\\BasicsOfProgramming\\\u0421ollections\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{665AAE7D-A8FC-4A14-BAF9-08434C8706D9}|\u0421ollections\\\u0421ollections.csproj|c:\\users\\courses\\desktop\\course\\c#_junior\\basicsofprogramming\\\u0441ollections\\\u0441ollections\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{665AAE7D-A8FC-4A14-BAF9-08434C8706D9}|\u0421ollections\\\u0421ollections.csproj|solutionrelative:\u0441ollections\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Courses\\Desktop\\Course\\C#_Junior\\BasicsOfProgramming\\\u0421ollections\\\u0421ollections\\Program.cs",
+              "RelativeDocumentMoniker": "\u0421ollections\\Program.cs",
+              "ToolTip": "C:\\Users\\Courses\\Desktop\\Course\\C#_Junior\\BasicsOfProgramming\\\u0421ollections\\\u0421ollections\\Program.cs",
+              "RelativeToolTip": "\u0421ollections\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T13:59:07.78Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

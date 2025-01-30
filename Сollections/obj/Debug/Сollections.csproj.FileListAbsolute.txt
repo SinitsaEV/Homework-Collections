@@ -1,0 +1,7 @@
+C:\Users\Courses\Desktop\Course\C#_Junior\BasicsOfProgramming\Сollections\Сollections\bin\Debug\Сollections.exe.config
+C:\Users\Courses\Desktop\Course\C#_Junior\BasicsOfProgramming\Сollections\Сollections\bin\Debug\Сollections.exe
+C:\Users\Courses\Desktop\Course\C#_Junior\BasicsOfProgramming\Сollections\Сollections\bin\Debug\Сollections.pdb
+C:\Users\Courses\Desktop\Course\C#_Junior\BasicsOfProgramming\Сollections\Сollections\obj\Debug\Сollections.csproj.AssemblyReference.cache
+C:\Users\Courses\Desktop\Course\C#_Junior\BasicsOfProgramming\Сollections\Сollections\obj\Debug\Сollections.csproj.CoreCompileInputs.cache
+C:\Users\Courses\Desktop\Course\C#_Junior\BasicsOfProgramming\Сollections\Сollections\obj\Debug\Сollections.exe
+C:\Users\Courses\Desktop\Course\C#_Junior\BasicsOfProgramming\Сollections\Сollections\obj\Debug\Сollections.pdb
