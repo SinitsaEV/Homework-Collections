@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Сollections
@@ -10,25 +10,17 @@ namespace Сollections
             string[] array1 = { "1", "2", "3", "1" };
             string[] array2 = { "1", "4", "5" };
 
-            List<string> result = MergeUniqueElements(array1, array2);
+            List<string> result = new List<string>();
+            MergeUniqueElements(result,array1);
+            MergeUniqueElements(result, array2);
             ShowListElements(result);
         }
 
-        private static List<string> MergeUniqueElements(string[] array1, string[] array2)
+        private static List<string> MergeUniqueElements(List<string> uniqueElements, string[] array)
         {
-            List<string> uniqueElements = new List<string>();
-
-            foreach (string element in array1)
+            foreach (string element in array)
             {
-                if(!uniqueElements.Contains(element))
-                {
-                    uniqueElements.Add(element);
-                }
-            }
-
-            foreach (string element in array2)
-            {
-                if (!uniqueElements.Contains(element))
+                if (uniqueElements.Contains(element) == false)
                 {
                     uniqueElements.Add(element);
                 }
@@ -39,9 +31,9 @@ namespace Сollections
 
         private static void ShowListElements(List<string> list)
         {
-            foreach (string s in list)
+            foreach (string element in list)
             {
-                Console.Write(s + " ");
+                Console.Write(element + " ");
             }
         }        
     }
