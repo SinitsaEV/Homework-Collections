@@ -92,7 +92,9 @@ namespace Сollections
             foreach (string post in staff.Keys)
             {
                 if (staff[post].Count > 0)
+                {
                     continue;
+                }
 
                 removePosts.Add(post);
             }
