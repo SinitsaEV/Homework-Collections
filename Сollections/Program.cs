@@ -11,12 +11,12 @@ namespace Сollections
             string[] array2 = { "1", "4", "5" };
 
             List<string> result = new List<string>();
-            MergeUniqueElements(result,array1);
-            MergeUniqueElements(result, array2);
+            AddUniqueElements(result,array1);
+            AddeUniqueElements(result, array2);
             ShowListElements(result);
         }
 
-        private static List<string> MergeUniqueElements(List<string> uniqueElements, string[] array)
+        private static void AddUniqueElements(List<string> uniqueElements, string[] array)
         {
             foreach (string element in array)
             {
