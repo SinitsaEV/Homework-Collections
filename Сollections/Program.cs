@@ -11,8 +11,8 @@ namespace Сollections
             string[] array2 = { "1", "4", "5" };
 
             List<string> result = new List<string>();
-            AddUniqueElements(result,array1);
-            AddeUniqueElements(result, array2);
+            AddUniqueElements(result, array1);
+            AddUniqueElements(result, array2);
             ShowListElements(result);
         }
 
@@ -25,8 +25,6 @@ namespace Сollections
                     uniqueElements.Add(element);
                 }
             }
-
-            return uniqueElements;
         }
 
         private static void ShowListElements(List<string> list)
@@ -35,6 +33,6 @@ namespace Сollections
             {
                 Console.Write(element + " ");
             }
-        }        
+        }
     }
 }
