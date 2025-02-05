@@ -8,81 +8,121 @@ namespace Сollections
     {
         static void Main(string[] args)
         {
-            const string ExitCommand = "exit";
-            const string SumCommand = "sum";
+            const string AddCommand = "0";
+            const string RemoveCommand = "1";
+            const string ShowCommand = "2";
+            const string ExitCommand = "3";
 
-            List<int> numbers = new List<int>();
-
-            bool isRunning = true;
-
-            Console.OutputEncoding = Encoding.Unicode;
-
-            ShowMenu(ExitCommand, SumCommand);
-
-            while (isRunning)
+            Dictionary<string, List<string>> personnelAccounting = new Dictionary<string, List<string>>
             {
+                {"курьер",new List<string>{"Наркевич"} },
+                {"слесарь",new List<string>{"Илюха","Андрей" } },
+                {"химик",new List<string>{ "Яна"} },
+
+            };
+            
+            Console.OutputEncoding = Encoding.Unicode;
+            Console.InputEncoding = Encoding.Unicode;
+
+            bool isActive = true;
+
+            while (isActive)
+            {
+                Console.WriteLine($"{AddCommand} - добавить\n{RemoveCommand} - удалить\n{ShowCommand} - показать всех\n{ExitCommand} - выход");
+
+                string post;
+                string fullName;
                 string playerInput = Console.ReadLine();
 
                 switch (playerInput)
                 {
-                    case ExitCommand:
-                        isRunning = false;
-                        Console.WriteLine("Вы вышли из программы.");
+                    case AddCommand:
+                        GetEmployeeData(out post, out fullName);
+                        AddEmployee(personnelAccounting, post, fullName);
                         break;
 
-                    case SumCommand:
-                        GetSum(numbers);
+                    case RemoveCommand:
+                        GetEmployeeData(out post, out fullName);
+                        RemoveEmployee(personnelAccounting, post, fullName);
+                        RemoveEmptyPosts(personnelAccounting);
+                        break;
+
+                    case ShowCommand:
+                        ShowStaffInformation(personnelAccounting);
+                        break;
+
+                    case ExitCommand:
+                        Console.WriteLine("Вы вышли из программы.");
+                        isActive = false;
                         break;
 
                     default:
-                        TryAddNumber(playerInput, numbers);
+                        Console.WriteLine("Неверный ввод.");
                         break;
                 }
             }
         }
 
-        private static int GetSum(List<int> numbers)
+        private static void AddEmployee(Dictionary<string, List<string>> staff, string post, string fullName)
         {
-            int sum = 0;
-
-            foreach (int number in numbers)
-                sum += number;
-
-            Console.WriteLine("Сумма всех чисел: " + sum);
-            return sum;
-        }
-
-        private static void ShowMenu(string exitCommand, string sumCommand)
-        {
-            Console.WriteLine("Команды программы:");
-            Console.WriteLine($"Выйти из программы - {exitCommand}\nВывести сумму всех чисел - {sumCommand}\nВведите любое число для добавления.");
-        }
-
-        private static void TryAddNumber(string playerInput, List<int> numbers)
-        {
-            if (int.TryParse(playerInput, out int playerNumber))
-            {
-                numbers.Add(playerNumber);
-                Console.WriteLine($"Добавлено число: {playerInput}");
-            }
+            if (staff.TryGetValue(post, out List<string> staf))
+                staf.Add(fullName);
             else
+                staff.Add(post, new List<string> { fullName });
+        }
+
+        private static void RemoveEmployee(Dictionary<string, List<string>> staff, string post, string fullName)
+        {
+            if (staff.ContainsKey(post))
+                if (staff[post].Contains(fullName))
+                    staff[post].Remove(fullName);
+        }
+
+        private static void RemoveEmptyPosts(Dictionary<string, List<string>> staff)
+        {
+            List<string> removePosts = GetEmptyPosts(staff);
+
+            RemovePosts(removePosts,staff);            
+        }
+
+        private static List<string> GetEmptyPosts(Dictionary<string, List<string>> staff)
+        {
+            List<string> removePosts = new List<string>();
+
+            foreach (string post in staff.Keys)
             {
-                Console.WriteLine("Неверный ввод");
+                if (staff[post].Count > 0)
+                    continue;
+
+                removePosts.Add(post);
             }
+
+            return removePosts;
+        }
+
+        private static void ShowStaffInformation(Dictionary<string, List<string>> staff)
+        {
+            foreach (string post in staff.Keys)
+            {
+                Console.WriteLine($"Должность : {post}");
+
+                foreach(string person in staff[post])
+                    Console.WriteLine($" - {person}");
+            }
+        }
+
+        private static void RemovePosts(List<string> removePosts, Dictionary<string, List<string>> staff)
+        {
+            foreach(string post in removePosts)
+                staff.Remove(post);
+        }
+
+        private static void GetEmployeeData(out string post,out string fullName)
+        {
+            Console.Write("Введите должность работника:");
+            post = Console.ReadLine().ToLower();
+            Console.Write("Введите ФИО работника:");
+            fullName = Console.ReadLine();
         }
     }
 }
-
-//В массивах вы выполняли задание "Динамический массив"
-
-//Используя всё изученное, напишите улучшенную версию динамического массива(не обязательно брать своё старое решение)
-
-//Задание нужно, чтобы вы освоились с List и прощупали его преимущество. 
-
-//Проверка на ввод числа обязательна.
-
-//Пользователь вводит числа, и программа их запоминает. 
-
-//Как только пользователь введёт команду sum, программа выведет сумму всех введенных чисел. 
-
-//Выход из программы должен происходить только в том случае, если пользователь введет команду exit.
