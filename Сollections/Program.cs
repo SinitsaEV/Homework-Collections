@@ -15,9 +15,9 @@ namespace Сollections
 
             Dictionary<string, List<string>> personnelAccounting = new Dictionary<string, List<string>>
             {
-                {"курьер",new List<string>{"Наркевич"} },
-                {"слесарь",new List<string>{"Илюха","Андрей" } },
-                {"химик",new List<string>{ "Яна"} },
+                {"курьер",new List<string>{"Наркевич Владимир Николаевич"} },
+                {"слесарь",new List<string>{"Бурван Илья Викторович","Барауля Андрей Дмитриевич" } },
+                {"химик",new List<string>{ "Дудук Яна Игоревна"} },
 
             };
             
@@ -107,7 +107,9 @@ namespace Сollections
                 Console.WriteLine($"Должность : {post}");
 
                 foreach(string person in staff[post])
+                {
                     Console.WriteLine($" - {person}");
+                }
             }
         }
 
